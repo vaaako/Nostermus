@@ -177,18 +177,13 @@ namespace nostdraw {
 	// Clear the line under the cursor
 	void clear_line(const uint16 x, const uint16 y);
 
-	// Print a character without pushing it to the buffer
-	void printchar(const uint16 x, const uint16 y, const char ch);
-
 	// Put a single char in some location
 	void putchar(const uint16 x, const uint16 y, const char ch);
 
-	// Put a list of chars in a row.
-	// Place all the characters in the buffer
+	// Put a list of chars in a row
 	void putchars(const uint16 x, const uint16 y, const char* chars);
 
-	// Put a string in some location.
-	// This does not place the string in the buffer
+	// Show a message in some location
 	void putstring(const uint16 x, const uint16 y, const char* message);
 
 	// Show a message in some location and wait for any key

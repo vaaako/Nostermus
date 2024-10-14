@@ -1,7 +1,7 @@
 #include "nostermus.hpp"
 #include <cstring>
 
-#ifndef _WIN32
+#ifndef _WIN
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
@@ -87,6 +87,7 @@ void nostterm::show_cursor() {
 }
 
 void nostterm::move_cursor(const uint16 x, const uint16 y) {
+	// Not in bounds, do nothing
 	if(!nostterm::inbounds(x, y)) {
 		return;
 	}
@@ -234,21 +235,10 @@ void nostdraw::clear_line(const uint16 x, const uint16 y) {
 #endif
 }
 
-
-void nostdraw::printchar(const uint16 x, const uint16 y, const char ch) {
-	if(nostterm::inbounds(x, y)) {
-		nostterm::move_cursor(x, y);
-		std::cout << ch;
-	}
-}
-
 // Put a single char in some location
 void nostdraw::putchar(const uint16 x, const uint16 y, const char ch) {
-	if(nostterm::inbounds(x, y)) {
-		// this->buffer[x+y*this->width] = ch;
-		nostterm::move_cursor(x, y);
-		std::cout << ch;
-	}
+	nostterm::move_cursor(x, y);
+	std::cout << ch;
 	// this->reset_color();
 }
 
