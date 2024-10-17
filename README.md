@@ -1,9 +1,6 @@
 # Nostermus
 **Nostermus** is a tiny library for terminal drawing. It provides methods for rendering characters and messages in the terminal, with many utility methods. Nostermus does not require any external library and is compatible for Linux and Windows
 
-- **Cross-platform** on both Linux an Windows
-- **No external dependencies**
-
 This library is being used on [Nocturnus](https://github.com/vaaako/Nocturnus) a Terminal-based Roguelike library
 
 
