@@ -1,7 +1,7 @@
 #include "nostermus.hpp"
 #include <cstring>
 
-#ifndef _WIN
+#ifndef _WIN32
 #include <termios.h>
 #include <sys/ioctl.h>
 #include <unistd.h>
